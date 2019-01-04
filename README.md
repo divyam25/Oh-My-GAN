@@ -1,5 +1,7 @@
-
-
+### GAN Architectures
+[x] DCGAN 
+[x] wDCGAN-Weight Clipping 
+[ ] wDCGAN-Gradient Penalty
 ## Deep Convolutional Generative Adversarial Networks (DCGANs)
 The idea behind GANs is to train two networks jointly:
 1. A **generator** G to map a Z following a [simple] fixed distribution to the desired "real" distribution, and
@@ -35,16 +37,44 @@ with standard deviation 0.02. (still works fairly well without this tweak)
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_DCGAN_results/MNIST_DCGAN_train_hist.png "Loss Plot")
 
 I will be running a few more epochs to check for any kind of improvements in Generator Performance further. 
-
 ## Results : 
 1. With a uniform distribution **Z** constant for every epoch (same digit in the block throughout all epochs)
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_DCGAN_results/generation_animation_fixed.gif "fixed Z")
 2. With a uniform distribution **Z** changing every epoch. (different digits in the block for different epochs)
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_DCGAN_results/generation_animation_random.gif "random Z") 
 
+
+***
+# Wasserstein GAN (WGAN)
+#### 1. Weight Clipping (Originally proposed)
+The traditional GAN loss function works makes use of **Jensen-Shannon Divergence** which does not account much for the metric space. An alternative choice is the "**earth moving distance**", which intuitively is the minimum mass displacement to transform one distribution into the other.
+
+WGANs cure the main training problems of GANs. In particular, training WGANs does not require maintaining a careful balance in training of the discriminator and the generator, and does not require a careful design of the network architecture either. One of the most compelling practical benefits of WGANs is the ability to continuously estimate the **EM** (Wasserstein) distance by training the discriminator to optimality.
+
+The two benefits observed on using Wasserstein Distace for training :
+- A greater stability of the learning process ; does not witness "**mode collapse**"
+- A greater interpretability of the loss, which is a better indicator of the quality of the samples.
+
+Following excerpt from paper points out one of its major drawbacks :
+
+"**If the clipping parameter is large, then it can take a long time for any weights to reach their limit, thereby making it harder to train the critic till optimality. If the clipping is small, this can easily lead to vanishing gradients when the number of layers is big, or batch normalization is not used**"
+
+## Traning Details 
+
+## Training Loss v/s Epochs : 
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_wDCGAN_results/MNIST_DCGAN_train_hist.png "Loss Plot")
+## Results : 
+1. 1. With a uniform distribution **Z** constant for every epoch (same digit in the block throughout all epochs)
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_wDCGAN_results/generation_animation_fixed.gif "fixed Z")
+2. With a uniform distribution **Z** changing every epoch. (different digits in the block for different epochs)
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_wDCGAN_results/generation_animation_random.gif "random Z") 
+
+***
 # References :
 * "Unsupervised representation learning with deep convolutional generative adversarial networks." [[arxiv]](https://arxiv.org/pdf/1511.06434)
+* "Wasserstein GAN" [[arxiv]](https://arxiv.org/pdf/1701.07875)
 * https://pytorch.org/
+* https://github.com/soumith/ganhacks ~ GAN Hacks
 
 
 
