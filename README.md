@@ -60,7 +60,7 @@ Following excerpt from paper points out one of its major drawbacks :
 "**If the clipping parameter is large, then it can take a long time for any weights to reach their limit, thereby making it harder to train the critic till optimality. If the clipping is small, this can easily lead to vanishing gradients when the number of layers is big, or batch normalization is not used**"
 
 ## Traning Details 
-
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/wgan%20training.jpg "Training history")
 ## Training Loss v/s Epochs : 
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_wDCGAN_results/MNIST_DCGAN_train_hist.png "Loss Plot")
 ## Results : 
