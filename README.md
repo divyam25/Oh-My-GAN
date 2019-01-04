@@ -1,7 +1,7 @@
 ### GAN Architectures
-[x] DCGAN 
-[x] wDCGAN-Weight Clipping 
-[ ] wDCGAN-Gradient Penalty
+- [x] DCGAN 
+- [x] wDCGAN-Weight Clipping 
+- [ ] wDCGAN-Gradient Penalty
 ## Deep Convolutional Generative Adversarial Networks (DCGANs)
 The idea behind GANs is to train two networks jointly:
 1. A **generator** G to map a Z following a [simple] fixed distribution to the desired "real" distribution, and
