@@ -61,6 +61,7 @@ Following excerpt from paper points out one of its major drawbacks :
 
 ## Traning Details 
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/wgan%20training.jpg "Training history")
+### MNIST -----------
 ## Training Loss v/s Epochs : 
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_wDCGAN_results/MNIST_DCGAN_train_hist.png "Loss Plot")
 ## Results : 
@@ -69,10 +70,21 @@ Following excerpt from paper points out one of its major drawbacks :
 2. With a uniform distribution **Z** changing every epoch. (different digits in the block for different epochs)
 ![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/MNIST_wDCGAN_results/generation_animation_random.gif "random Z") 
 
+### CelebA ---------
+## Training Loss v/s Epochs : 
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/CelebA_wDCGAN_results/CelebA_wDCGAN_train_hist.png "Loss Plot")
+Epochs 20-30 seems like the saturation point for the experiment. (Stay Tuned :P)
+## Results : 
+1. 1. With a uniform distribution **Z** constant for every epoch (same digit in the block throughout all epochs)
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/CelebA_wDCGAN_results/generation_animation_fixed.gif "fixed Z")
+2. With a uniform distribution **Z** changing every epoch. (different digits in the block for different epochs)
+![alt text](https://github.com/divyam25/Oh-My-GAN/raw/master/content/CelebA_wDCGAN_results/generation_animation_random.gif "random Z") 
+
 ***
 # References :
 * "Unsupervised representation learning with deep convolutional generative adversarial networks." [[arxiv]](https://arxiv.org/pdf/1511.06434)
 * "Wasserstein GAN" [[arxiv]](https://arxiv.org/pdf/1701.07875)
+* "Improved Training of Wasserstein GANs" [[arxiv]](https://arxiv.org/pdf/1704.00028)
 * https://pytorch.org/
 * https://github.com/soumith/ganhacks ~ GAN Hacks
 
